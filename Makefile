@@ -11,4 +11,4 @@ lint:
 	npx eslint .
 
 gendiff:
-	node bin/gendiff.js
+	node bin/gendiff.js ${path1} ${path2}
