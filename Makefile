@@ -12,3 +12,6 @@ lint:
 
 gendiff:
 	node bin/gendiff.js ${path1} ${path2}
+
+start:
+	node bin/gendiff.js -h
