@@ -1,18 +1,15 @@
 import path from 'path';
 import fs from 'fs';
-import _ from 'lodash';
 import genDiff from './genDiff.js';
 
-const parseFile = (pathToFile) => {
-  const absoultePath = path.resolve(process.cwd(), pathToFile);
-  const data = fs.readFileSync(absoultePath);
-  const json = JSON.parse(data);
-  const sortedObj = _.keys(json).sort().reduce((acc, key) => ({ ...acc, [key]: json[key] }), {});
-  return sortedObj;
+const getData = (filePath) => {
+  const absPath = path.resolve(process.cwd(), filePath);
+  const rawData = fs.readFileSync(absPath, 'utf-8');
+  const data = JSON.parse(rawData);
+  return data;
 };
 
-export default (pathToFile1, pathToFile2) => {
-  const [obj1, obj2] = [parseFile(pathToFile1), parseFile(pathToFile2)];
-  const stringDiff = genDiff(obj1, obj2);
-  return stringDiff;
+export default (path1, path2) => {
+  const diffData = genDiff(getData(path1), getData(path2));
+  return diffData;
 };
