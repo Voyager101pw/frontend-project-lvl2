@@ -1,9 +1,14 @@
+plugins:
+  # https://github.com/jest-community/eslint-plugin-jest
+  - jest
+
 env:
   node: true
-  es2020: true
 
 extends:
   - 'airbnb-base'
+  # для того, чтобы eslint понимал и мог проверить синтаксис jest'а
+  - 'plugin:jest/recommended'
 
 parserOptions:
   ecmaVersion: 11
