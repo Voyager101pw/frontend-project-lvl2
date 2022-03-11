@@ -15,3 +15,9 @@ gendiff:
 
 start:
 	node bin/gendiff.js -h
+
+test:
+	npm test
+
+test-detail:
+	npx jest --watch
