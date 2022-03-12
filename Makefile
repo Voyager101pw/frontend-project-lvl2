@@ -21,3 +21,6 @@ test:
 
 test-detail:
 	npx jest --watch
+
+test-coverage:
+	npm test -- --coverage
