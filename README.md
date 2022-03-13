@@ -28,3 +28,6 @@ $ make start
 $ make node gendiff path1=<путь/название файла> path2=<путь/название файла>
 $ node bin/gendiff <путь/название файла> <путь/название файла>
 ```
+
+- Сравнение двух файлов
+[![asciicast](https://asciinema.org/a/8mBYOY9h90wYD2gcE3KszB4iY.svg)](https://asciinema.org/a/8mBYOY9h90wYD2gcE3KszB4iY)

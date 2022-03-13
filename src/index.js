@@ -1,15 +1,22 @@
-import path from 'path';
-import fs from 'fs';
+import path, { basename, resolve } from 'path';
 import genDiff from './genDiff.js';
+import getParsedData from './parsers.js';
 
-const getData = (filePath) => {
-  const absPath = path.resolve(process.cwd(), filePath);
-  const rawData = fs.readFileSync(absPath, 'utf-8');
-  const data = JSON.parse(rawData);
-  return data;
-};
+const getAbsPaths = (paths) =>
+  paths.map((path) => resolve(process.cwd(), path));
 
-export default (path1, path2) => {
-  const diffData = genDiff(getData(path1), getData(path2));
-  return diffData;
+export default (...paths) => {
+  try {
+    const absPaths = getAbsPaths(paths);
+    const parsedData = getParsedData(absPaths);
+    const diffData = genDiff(...parsedData);
+    return diffData;
+  } catch (err) {
+    switch (err.code) {
+      case 'ENOENT':
+        return `Файл ${basename(err.path)} не существует!\nПуть: ${err.path}`;
+      default:
+        return `Файл не соотвествует расширению!`;
+    }
+  }
 };
