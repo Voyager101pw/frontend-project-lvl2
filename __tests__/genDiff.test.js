@@ -12,7 +12,7 @@ const getAbsPath = (fileName) => {
   return absPath;
 };
 
-const files = ['.json', '.yml'].map(ext => [`file1${ext}`, `file2${ext}`])
+const files = ['.json', '.yml'].map((ext) => [`file1${ext}`, `file2${ext}`]);
 
 test.each(files)(
   'Checking utility diff for each format',
@@ -31,9 +31,9 @@ test('Passing undefined file to a function', () => {
   const existFile = getAbsPath('file1.json');
   const undefinedFile = 'undefined.ext';
   expect(genDiff(existFile, undefinedFile)).toMatch(/не существует!/);
-})
+});
 
 test('Passing a corrupted file to a function', () => {
   const notJSON = getAbsPath('notJSON.json');
   expect(genDiff(notJSON, notJSON)).toMatch(/не соотвествует/);
-})
+});

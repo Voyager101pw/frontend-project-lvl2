@@ -1,9 +1,8 @@
-import path, { basename, resolve } from 'path';
+import { basename, resolve } from 'path';
 import genDiff from './genDiff.js';
 import getParsedData from './parsers.js';
 
-const getAbsPaths = (paths) =>
-  paths.map((path) => resolve(process.cwd(), path));
+const getAbsPaths = (paths) => paths.map((path) => resolve(process.cwd(), path));
 
 export default (...paths) => {
   try {
@@ -16,7 +15,7 @@ export default (...paths) => {
       case 'ENOENT':
         return `Файл ${basename(err.path)} не существует!\nПуть: ${err.path}`;
       default:
-        return `Файл не соотвествует расширению!`;
+        return 'Файл не соотвествует расширению!';
     }
   }
 };
