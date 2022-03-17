@@ -31,3 +31,5 @@ $ node bin/gendiff <путь/название файла> <путь/назван
 
 - Сравнение двух файлов
 [![asciicast](https://asciinema.org/a/8mBYOY9h90wYD2gcE3KszB4iY.svg)](https://asciinema.org/a/8mBYOY9h90wYD2gcE3KszB4iY)
+- Сравнение двух файлов с использованием форматера: stylish (по умолчанию).
+[![asciicast](https://asciinema.org/a/xYYVvBiViRCF6BzjEShElxbCA.svg)](https://asciinema.org/a/xYYVvBiViRCF6BzjEShElxbCA)
