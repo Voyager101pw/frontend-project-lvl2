@@ -23,7 +23,7 @@ const stringify = (ast, rep = '    ', spacesCount = 1, depth = 0) => {
   };
 
   const lines = isObject(ast)
-    ? Object.keys(ast).sort().map((key) => (`${currentIndent + rep}${key}: ${stringify(ast[key], rep, spacesCount, depth + 1)}`))
+    ? Object.keys(ast).map((key) => (`${currentIndent + rep}${key}: ${stringify(ast[key], rep, spacesCount, depth + 1)}`))
     : ast.map((node) => `${renderString(node)}`);
   return ['{', ...lines, `${currentIndent}}`].join('\n');
 };

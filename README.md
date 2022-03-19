@@ -29,7 +29,9 @@ $ make node gendiff path1=<путь/название файла> path2=<путь
 $ node bin/gendiff <путь/название файла> <путь/название файла>
 ```
 
-- Сравнение двух файлов
+- Вывод разницы ни примере двух плоских структур.
 [![asciicast](https://asciinema.org/a/8mBYOY9h90wYD2gcE3KszB4iY.svg)](https://asciinema.org/a/8mBYOY9h90wYD2gcE3KszB4iY)
-- Сравнение двух файлов с использованием форматера: stylish (по умолчанию).
+- Вывод разницы двух файлов в стиле "stylish" (по умолчанию)
 [![asciicast](https://asciinema.org/a/xYYVvBiViRCF6BzjEShElxbCA.svg)](https://asciinema.org/a/xYYVvBiViRCF6BzjEShElxbCA)
+- Вывод разницы двух файлов в стиле "plain"
+[![asciicast](https://asciinema.org/a/d0TFsLSZbq8dgRc3FwZ8avdk8.svg)](https://asciinema.org/a/d0TFsLSZbq8dgRc3FwZ8avdk8)
