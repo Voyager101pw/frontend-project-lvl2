@@ -3,16 +3,22 @@ import { extname } from 'path';
 import { readFileSync } from 'fs';
 
 const getExtension = (path) => extname(path).substring(1);
-const getData = (path) => readFileSync(path, 'utf-8');
+const getData = (path) => {
+  try {
+    return readFileSync(path, 'utf-8');
+  } catch (e) {
+    throw Error(`File is not found: ${e.path}`);
+  }
+};
+
+const formats = {
+  json: JSON.parse,
+  yml: YAML.load,
+  yaml: YAML.load,
+};
 
 export default (paths) => paths.map((path) => {
   const ext = getExtension(path);
   const data = getData(path, 'utf-8');
-  switch (ext) {
-    case 'json': return JSON.parse(data);
-    case 'yml': return YAML.load(data);
-    case 'yaml': return YAML.load(data);
-    default:
-      throw Error(`Extension file is not correct: ${ext}`);
-  }
+  return formats[ext](data);
 });

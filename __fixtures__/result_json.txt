@@ -1,0 +1,175 @@
+[
+  {
+    "name": "common",
+    "status": "hasChildren",
+    "children": [
+      {
+        "name": "follow",
+        "status": "added",
+        "value": false
+      },
+      {
+        "name": "setting1",
+        "status": "saved",
+        "value": "Value 1"
+      },
+      {
+        "name": "setting2",
+        "status": "deleted",
+        "value": 200
+      },
+      {
+        "name": "setting3",
+        "status": "update",
+        "oldValue": true,
+        "newValue": {
+          "key": "value"
+        }
+      },
+      {
+        "name": "setting4",
+        "status": "added",
+        "value": "blah blah"
+      },
+      {
+        "name": "setting5",
+        "status": "added",
+        "value": {
+          "key5": "value5"
+        }
+      },
+      {
+        "name": "setting6",
+        "status": "hasChildren",
+        "children": [
+          {
+            "name": "doge",
+            "status": "hasChildren",
+            "children": [
+              {
+                "name": "wow",
+                "status": "update",
+                "oldValue": "too much",
+                "newValue": "so much"
+              }
+            ]
+          },
+          {
+            "name": "key",
+            "status": "saved",
+            "value": "value"
+          },
+          {
+            "name": "ops",
+            "status": "added",
+            "value": "vops"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "group1",
+    "status": "hasChildren",
+    "children": [
+      {
+        "name": "baz",
+        "status": "update",
+        "oldValue": "bas",
+        "newValue": "bars"
+      },
+      {
+        "name": "foo",
+        "status": "saved",
+        "value": "bar"
+      },
+      {
+        "name": "nest",
+        "status": "update",
+        "oldValue": {
+          "key": "value"
+        },
+        "newValue": "str"
+      }
+    ]
+  },
+  {
+    "name": "group2",
+    "status": "deleted",
+    "value": {
+      "abc": 12345,
+      "deep": {
+        "id": 45
+      }
+    }
+  },
+  {
+    "name": "group3",
+    "status": "added",
+    "value": {
+      "deep": {
+        "id": {
+          "number": 45
+        }
+      },
+      "fee": 100500
+    }
+  },
+  {
+    "name": "group4",
+    "status": "hasChildren",
+    "children": [
+      {
+        "name": "default",
+        "status": "update",
+        "oldValue": null,
+        "newValue": ""
+      },
+      {
+        "name": "foo",
+        "status": "update",
+        "oldValue": 0,
+        "newValue": null
+      },
+      {
+        "name": "isNested",
+        "status": "update",
+        "oldValue": false,
+        "newValue": "none"
+      },
+      {
+        "name": "key",
+        "status": "added",
+        "value": false
+      },
+      {
+        "name": "nest",
+        "status": "hasChildren",
+        "children": [
+          {
+            "name": "bar",
+            "status": "update",
+            "oldValue": "",
+            "newValue": 0
+          },
+          {
+            "name": "isNested",
+            "status": "deleted",
+            "value": true
+          }
+        ]
+      },
+      {
+        "name": "someKey",
+        "status": "added",
+        "value": true
+      },
+      {
+        "name": "type",
+        "status": "update",
+        "oldValue": "bas",
+        "newValue": "bar"
+      }
+    ]
+  }
+]
